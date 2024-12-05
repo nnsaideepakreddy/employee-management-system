@@ -7,7 +7,7 @@ import os
 def create_db_connection():
     try:
         return psycopg2.connect(
-            host=os.getenv("DB_HOST", "127.0.0.1"),
+            host=os.getenv("DB_HOST", "localhost"),
             database=os.getenv("DB_NAME", "Project"),
             user=os.getenv("DB_USER", "postgres"),
             password=os.getenv("DB_PASSWORD", "2495"),
