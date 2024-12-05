@@ -1,6 +1,0 @@
-streamlit
-psycopg2
-pandas
-sqlalchemy
-pg8000
-
