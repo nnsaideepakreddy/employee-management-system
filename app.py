@@ -1,23 +1,28 @@
+import streamlit as st
+import pandas as pd
+import pg8000
+
 def create_db_connection():
-    # Hardcoded credentials
     host = "pg-205cff4d-nnsaideepak-adde.g.aivencloud.com"
     database = "defaultdb"
     user = "avnadmin"
     password = "AVNS_sPl-2cVqG3XjT3h_orr"
-    port = "21517"
-
+    port = 21517
     try:
-        return psycopg2.connect(
+        conn = pg8000.connect(
             host=host,
             database=database,
             user=user,
             password=password,
             port=port,
-            sslmode='require'  # Make sure SSL mode is required for Aiven
+            ssl_context=True
         )
+        return conn
     except Exception as e:
         st.error(f"Error connecting to the database: {e}")
         return None
+
+
 # Streamlit app title
 st.title("Employee Management System (Aiven)")
 
