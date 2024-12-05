@@ -11,7 +11,7 @@ def create_db_connection():
             database=os.getenv("DB_NAME", "Project"),
             user=os.getenv("DB_USER", "postgres"),
             password=os.getenv("DB_PASSWORD", "2495"),
-            port=os.getenv("DB_PORT", "5432")
+            port=os.getenv("DB_PORT", "9999")
         )
     except Exception as e:
         st.error(f"Error connecting to the database: {e}")
