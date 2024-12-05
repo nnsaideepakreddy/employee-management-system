@@ -6,11 +6,12 @@ from sqlalchemy import create_engine
 # Database connection settings
 def create_db_connection():
     return psycopg2.connect(
-        host="localhost",  # replace with your database hostname
-        database="Project",  # replace with your database name
-        user="postgres",  # replace with your database username
-        password="2495"  # replace with your database password
-    )
+    host="127.0.0.1",
+    database="Project",
+    user="postgres",
+    password="2495",
+)
+
 
 # Streamlit app title
 st.title("Employee Management System")
